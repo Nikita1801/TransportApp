@@ -23,6 +23,8 @@
 		A796D2B827CAC49400200998 /* StopInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2B727CAC49400200998 /* StopInformationModel.swift */; };
 		A796D2BB27CAD83700200998 /* StopInfoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2BA27CAD83700200998 /* StopInfoMapper.swift */; };
 		A796D2BD27CB9EB800200998 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2BC27CB9EB800200998 /* BottomSheetViewController.swift */; };
+		A7CF08C027CD41EA004C4E3F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF08BF27CD41EA004C4E3F /* CustomCell.swift */; };
+		A7CF08C227CD441F004C4E3F /* BottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF08C127CD441F004C4E3F /* BottomSheetController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		A796D2B727CAC49400200998 /* StopInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInformationModel.swift; sourceTree = "<group>"; };
 		A796D2BA27CAD83700200998 /* StopInfoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoMapper.swift; sourceTree = "<group>"; };
 		A796D2BC27CB9EB800200998 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		A7CF08BF27CD41EA004C4E3F /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A7CF08C127CD441F004C4E3F /* BottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				A77AB59027C6557B00A404C5 /* ViewController.swift */,
 				A796D0D627C790350001B6C2 /* MapViewController.swift */,
 				A796D2BC27CB9EB800200998 /* BottomSheetViewController.swift */,
+				A7CF08BF27CD41EA004C4E3F /* CustomCell.swift */,
+				A7CF08C127CD441F004C4E3F /* BottomSheetController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -246,12 +252,14 @@
 				A77AB5AA27C6D63800A404C5 /* Mapper.swift in Sources */,
 				A796D2B227CAC3C400200998 /* StopInformationRepostory.swift in Sources */,
 				A77AB5A327C6563E00A404C5 /* TransportDataDTO.swift in Sources */,
+				A7CF08C227CD441F004C4E3F /* BottomSheetController.swift in Sources */,
 				A796D2BB27CAD83700200998 /* StopInfoMapper.swift in Sources */,
 				A77AB58D27C6557B00A404C5 /* AppDelegate.swift in Sources */,
 				A77AB58F27C6557B00A404C5 /* SceneDelegate.swift in Sources */,
 				A77AB5A827C6B27900A404C5 /* StopModel.swift in Sources */,
 				A796D2B427CAC3F600200998 /* StopInformationDTO.swift in Sources */,
 				A796D0D727C790350001B6C2 /* MapViewController.swift in Sources */,
+				A7CF08C027CD41EA004C4E3F /* CustomCell.swift in Sources */,
 				A796D2BD27CB9EB800200998 /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

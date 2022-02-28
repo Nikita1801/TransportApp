@@ -20,7 +20,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        print("!!!!!!!!!!!!\(id)!!!!!!!!")
+        //print("!!!!!!!!!!!!\(id)!!!!!!!!")
         mapThis(lat: lat, lon: lon)
         
         
@@ -60,11 +60,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // Perform BottomSheet
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
-        let bottomSheetVC = BottomSheetViewController()
+        let bottomSheetVC = self.storyboard?.instantiateViewController(withIdentifier: "BottomSheetController") as! BottomSheetController//BottomSheetController()
         bottomSheetVC.mapVC = self
         if let sheet = bottomSheetVC.sheetPresentationController {
-            sheet.detents = [.medium()]
+            sheet.detents = [.medium(), .large()]
             sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.presentingViewController.title = "Details"
+            sheet.preferredCornerRadius = 20
         }
         present(bottomSheetVC, animated: true)
     }

@@ -30,7 +30,7 @@ struct StopInformationRepository {
                 if let safeData = data {
                     let stopDetails = parseJSON(safeData)
                     delegate?.didUpdateStopInfo(self, stopInformation: stopDetails)
-                    print(stopDetails)
+                    //print(stopDetails)
                 }
                 
             }
