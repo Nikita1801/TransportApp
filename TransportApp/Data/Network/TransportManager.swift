@@ -12,7 +12,7 @@ struct TransportManager {
     var delegate : TransportManagerDelegate?
     
     
-     func getBusStop() {
+     func getBusStops() {
         let finalURL = transportURL
         if let url = URL(string: finalURL) {
             let session = URLSession(configuration: .default)

@@ -8,5 +8,6 @@ struct StopDTO : Codable {
     let lon : Double
     let lat : Double
     let name : String
+    
 }
 

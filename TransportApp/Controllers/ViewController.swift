@@ -7,6 +7,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var stopsArray : [StopModel?] = []
     var stopsTableView = UITableView()
     var stopID : String = ""
+    var stopLat : Double = 0.0
+    var stopLon : Double = 0.0
+    var stopName : String = ""
     let identifire = "MyCell"
     
     var transportManager = TransportManager()
@@ -16,8 +19,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = "Автобусные остановки"
         transportManager.delegate = self
-        transportManager.getBusStop()
+        transportManager.getBusStops()
+        
         
     }
     
@@ -29,7 +35,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.stopsTableView.dataSource = self
         
         stopsTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        stopsTableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stopsTableView)
+        let horizontalConstraint = NSLayoutConstraint(item: stopsTableView, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
+            let verticalConstraint = NSLayoutConstraint(item: stopsTableView, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 50)
+            let widthConstraint = NSLayoutConstraint(item: stopsTableView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 414)
+            let heightConstraint = NSLayoutConstraint(item: stopsTableView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 800)
+            view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,6 +49,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let destinationVC = segue.destination as! MapViewController
             
             destinationVC.id = stopID
+            destinationVC.lat = stopLat
+            destinationVC.lon = stopLon
+            destinationVC.name = stopName
         }
     }
 
@@ -66,24 +81,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
         let stop = stopsArray[indexPath.row]
-        stopID = (stop?.id)!
-        //print(stop ?? 0)
+        stopID = stop?.id ?? ""
+        stopLat = stop?.lat ?? 0.0
+        stopLon = stop?.lon ?? 0.0
+        stopName = stop?.name ?? ""
+        
         self.performSegue(withIdentifier: "goToMap", sender: self)
-        
-        
-        
-            
     }
 
-    
-    
 }
     
 extension ViewController : TransportManagerDelegate{
     func didUpdateBusStops(_ transportManager: TransportManager, stop: [StopModel?]) {
         self.stopsArray = stop
-        //print("______________!!!!!!!_____________")
-        //print(stopsArray)
         DispatchQueue.main.async {
             self.createTable()
         }

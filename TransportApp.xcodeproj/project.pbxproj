@@ -18,6 +18,11 @@
 		A77AB5A827C6B27900A404C5 /* StopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AB5A727C6B27900A404C5 /* StopModel.swift */; };
 		A77AB5AA27C6D63800A404C5 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AB5A927C6D63800A404C5 /* Mapper.swift */; };
 		A796D0D727C790350001B6C2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D0D627C790350001B6C2 /* MapViewController.swift */; };
+		A796D2B227CAC3C400200998 /* StopInformationRepostory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2B127CAC3C400200998 /* StopInformationRepostory.swift */; };
+		A796D2B427CAC3F600200998 /* StopInformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2B327CAC3F600200998 /* StopInformationDTO.swift */; };
+		A796D2B827CAC49400200998 /* StopInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2B727CAC49400200998 /* StopInformationModel.swift */; };
+		A796D2BB27CAD83700200998 /* StopInfoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2BA27CAD83700200998 /* StopInfoMapper.swift */; };
+		A796D2BD27CB9EB800200998 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A796D2BC27CB9EB800200998 /* BottomSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		A77AB5A727C6B27900A404C5 /* StopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopModel.swift; sourceTree = "<group>"; };
 		A77AB5A927C6D63800A404C5 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		A796D0D627C790350001B6C2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A796D2B127CAC3C400200998 /* StopInformationRepostory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInformationRepostory.swift; sourceTree = "<group>"; };
+		A796D2B327CAC3F600200998 /* StopInformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInformationDTO.swift; sourceTree = "<group>"; };
+		A796D2B727CAC49400200998 /* StopInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInformationModel.swift; sourceTree = "<group>"; };
+		A796D2BA27CAD83700200998 /* StopInfoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoMapper.swift; sourceTree = "<group>"; };
+		A796D2BC27CB9EB800200998 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +76,18 @@
 		A77AB58B27C6557B00A404C5 /* TransportApp */ = {
 			isa = PBXGroup;
 			children = (
+				A796D2AD27CABD8700200998 /* Common */,
+				A796D2AE27CABDAF00200998 /* Data */,
 				A77AB58C27C6557B00A404C5 /* AppDelegate.swift */,
 				A77AB58E27C6557B00A404C5 /* SceneDelegate.swift */,
-				A77AB5A427C6565500A404C5 /* Model */,
+				A796D2B527CAC45500200998 /* Domain */,
 				A77AB5A127C655EB00A404C5 /* Controllers */,
 				A77AB5A027C655D500A404C5 /* View */,
 				A77AB59527C6557C00A404C5 /* Assets.xcassets */,
 				A77AB59727C6557C00A404C5 /* LaunchScreen.storyboard */,
 				A77AB59A27C6557C00A404C5 /* Info.plist */,
 				A77AB5A927C6D63800A404C5 /* Mapper.swift */,
+				A796D2BA27CAD83700200998 /* StopInfoMapper.swift */,
 			);
 			path = TransportApp;
 			sourceTree = "<group>";
@@ -90,20 +103,70 @@
 		A77AB5A127C655EB00A404C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A796D0D627C790350001B6C2 /* MapViewController.swift */,
 				A77AB59027C6557B00A404C5 /* ViewController.swift */,
+				A796D0D627C790350001B6C2 /* MapViewController.swift */,
+				A796D2BC27CB9EB800200998 /* BottomSheetViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		A77AB5A427C6565500A404C5 /* Model */ = {
+		A796D2AD27CABD8700200998 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A796D2AE27CABDAF00200998 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A796D2AF27CABDC300200998 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A796D2AF27CABDC300200998 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A77AB5A527C6AE4D00A404C5 /* TransportManager.swift */,
+				A796D2B127CAC3C400200998 /* StopInformationRepostory.swift */,
+				A796D2B027CABDD400200998 /* DataMapping */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A796D2B027CABDD400200998 /* DataMapping */ = {
 			isa = PBXGroup;
 			children = (
 				A77AB5A227C6563E00A404C5 /* TransportDataDTO.swift */,
-				A77AB5A527C6AE4D00A404C5 /* TransportManager.swift */,
-				A77AB5A727C6B27900A404C5 /* StopModel.swift */,
+				A796D2B327CAC3F600200998 /* StopInformationDTO.swift */,
 			);
-			path = Model;
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		A796D2B527CAC45500200998 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A796D2B927CAC4AF00200998 /* UseCase */,
+				A796D2B627CAC47000200998 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A796D2B627CAC47000200998 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A77AB5A727C6B27900A404C5 /* StopModel.swift */,
+				A796D2B727CAC49400200998 /* StopInformationModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A796D2B927CAC4AF00200998 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,14 +240,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A796D2B827CAC49400200998 /* StopInformationModel.swift in Sources */,
 				A77AB59127C6557B00A404C5 /* ViewController.swift in Sources */,
 				A77AB5A627C6AE4D00A404C5 /* TransportManager.swift in Sources */,
 				A77AB5AA27C6D63800A404C5 /* Mapper.swift in Sources */,
+				A796D2B227CAC3C400200998 /* StopInformationRepostory.swift in Sources */,
 				A77AB5A327C6563E00A404C5 /* TransportDataDTO.swift in Sources */,
+				A796D2BB27CAD83700200998 /* StopInfoMapper.swift in Sources */,
 				A77AB58D27C6557B00A404C5 /* AppDelegate.swift in Sources */,
 				A77AB58F27C6557B00A404C5 /* SceneDelegate.swift in Sources */,
 				A77AB5A827C6B27900A404C5 /* StopModel.swift in Sources */,
+				A796D2B427CAC3F600200998 /* StopInformationDTO.swift in Sources */,
 				A796D0D727C790350001B6C2 /* MapViewController.swift in Sources */,
+				A796D2BD27CB9EB800200998 /* BottomSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
