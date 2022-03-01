@@ -16,9 +16,11 @@ class BottomSheetController: UIViewController {
     var mapVC : MapViewController?
 
         
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Текущие маршруты"
+        self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = "Транспорт"
         transportInfoTableVIew?.delegate = self
         transportInfoTableVIew?.dataSource = self
         
@@ -58,7 +60,7 @@ extension BottomSheetController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 90
     }
 }
 
