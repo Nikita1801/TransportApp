@@ -15,16 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var transportManager = TransportManager()
     
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.navigationItem.title = "Автобусные остановки"
         transportManager.delegate = self
         transportManager.getBusStops()
-        
-        
     }
     
     func createTable() {
@@ -57,8 +53,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     
     //MARK: - UITableViewDelegate
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stopsArray.count
@@ -97,8 +91,6 @@ extension ViewController : TransportManagerDelegate{
         DispatchQueue.main.async {
             self.createTable()
         }
-        
-        
     }
 }
 

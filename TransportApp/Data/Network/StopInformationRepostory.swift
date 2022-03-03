@@ -6,9 +6,11 @@
 //
 
 import Foundation
+
 protocol StopInformationRepositoryDelegate {
     func didUpdateStopInfo(_ topInformationRepository : StopInformationRepository, stopInformation : [StopInformationModel?])
 }
+
 
 struct StopInformationRepository {
     let stopInfoURL = "https://api.mosgorpass.ru/v8.2/stop"
@@ -24,15 +26,13 @@ struct StopInformationRepository {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
-                    //TODO: delegate didFailWithError
                     return
                 }
                 if let safeData = data {
                     let stopDetails = parseJSON(safeData)
                     delegate?.didUpdateStopInfo(self, stopInformation: stopDetails)
-                    //print(stopDetails)
+                    print(stopDetails)
                 }
-                
             }
             task.resume()
         }
@@ -49,10 +49,7 @@ struct StopInformationRepository {
         }
         catch {
             print("error")
-            // TODO: ErrorExeption
             return [nil]
         }
     }
-    
-    
 }

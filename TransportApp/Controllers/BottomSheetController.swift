@@ -26,8 +26,6 @@ class BottomSheetController: UIViewController {
         
         stopInformationRepository.delegate = self
         stopInformationRepository.fetchStopInfo(stopID: mapVC?.id ?? "00047fcc-66f3-4f9f-9c0e-8763091979cc")
-        
-        print("\(trasnportInfoArray)!!!!!!!!!!!!!!")
 
     }
     
@@ -36,12 +34,10 @@ class BottomSheetController: UIViewController {
 }
 extension BottomSheetController : StopInformationRepositoryDelegate {
     func didUpdateStopInfo(_ topInformationRepository: StopInformationRepository, stopInformation: [StopInformationModel?]) {
-        print(stopInformation)
         self.trasnportInfoArray = stopInformation
         DispatchQueue.main.async {
             self.transportInfoTableVIew?.reloadData()
         }
-        
     }
 }
 

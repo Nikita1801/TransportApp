@@ -23,24 +23,19 @@ struct TransportManager {
                 }
                 if let safeData = data {
                     let transportInfo = parseJSON(safeData)
-                    //print(transportInfo)
-                    //print(self.parseJSON(safeData))
                     delegate?.didUpdateBusStops(self, stop: transportInfo)
-                    
-                    
                 }
             }
             task.resume()
         }
-            
     }
+    
     
     func parseJSON(_ transportData : Data) -> [StopModel?] {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(TransportDataDTO.self, from: transportData)
             let stopArray :[StopDTO] = decodedData.data
-            //print(stopArray.map{map(stop: $0)})
             return stopArray.map{map(stop: $0)}
         }
         catch{

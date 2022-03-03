@@ -20,10 +20,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        //print("!!!!!!!!!!!!\(id)!!!!!!!!")
         mapThis(lat: lat, lon: lon)
-        
-        
     }
     
     
@@ -71,7 +68,4 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         present(bottomSheetVC, animated: true)
     }
-
-   
-
 }
