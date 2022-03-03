@@ -11,4 +11,4 @@ MapKit to display current location of the bus stops
 
 ## Preview
 
-![Tranpost_app](https://youtu.be/i2YtHGQbSbU)
+https://youtu.be/i2YtHGQbSbU
